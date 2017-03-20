@@ -150,12 +150,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         try {
-            listView= (ListView) findViewById(R.id.listview_contact);
-            chatList.add(new Chat(R.mipmap.ic_launcher,"李航","666"));
+            listView= (ListView) tab1.findViewById(R.id.listview_contact);
+            initList();
+//            chatList.add(new Chat(R.mipmap.ic_launcher,"李航"," 666"));
             adapter=new MyListAdapter(MainActivity.this,R.layout.item_layout,chatList);
             listView.setAdapter(adapter);
         }catch (NullPointerException e){
             e.printStackTrace();
+        }
+    }
+
+    private void initList() {
+        for (int i=0;i<20;i++){
+            chatList.add(new Chat(R.mipmap.ic_launcher,"李航"," 666"));
         }
     }
 
